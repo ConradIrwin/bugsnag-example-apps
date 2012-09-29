@@ -16,11 +16,12 @@ end
 
 
 # Hook into the top level error_handler
-EventMachine.error_handler do |e|
-  puts "FOUND AN ERROR"
-  Bugsnag.notify(e)
-  raise e
-end
+# EventMachine.error_handler do |e|
+#   puts "FOUND AN ERROR"
+#   Bugsnag.notify(e)
+#   raise e
+# end
+
 
 # Make a long running job using EventMachine::Deferrable
 class SomeLongRunningJob
@@ -31,10 +32,15 @@ class SomeLongRunningJob
 
     # Simulate a shit ton of work
     timer = EventMachine::Timer.new(5) do
-      raise BugsnagFatalException.new("Crashed in SomeLongRunningJob") if crash
+      if crash
+        self.fail
+      else
+        self.succeed
+      end
+        
+      # raise BugsnagFatalException.new("Crashed in SomeLongRunningJob") if crash
 
       puts "Finished long running job"
-      self.succeed
     end
   end
 end
@@ -42,6 +48,8 @@ end
 
 # Define our rack app
 class App < Sinatra::Base
+  use Bugsnag::Rack
+
   get "/" do
     "Hello from Sinatra EventMachine app! GET /job to run a long running job, /crash to make me crash."
   end
@@ -50,7 +58,6 @@ class App < Sinatra::Base
     puts "Started request"
 
     EventMachine.next_tick do
-      puts "IN HERE"
       job = SomeLongRunningJob.new
       job.callback { puts "Callback knows the job finished" }
       job.errback { puts "Callback knows the job failed" }
@@ -63,10 +70,15 @@ class App < Sinatra::Base
   get "/crash" do
     puts "Started request"
   
+    bugsnag_request_data = Bugsnag.configuration.request_data
     EventMachine.next_tick do
       job = SomeLongRunningJob.new(true)
       job.callback { puts "Callback knows the job finished" }
-      job.errback { puts "Callback knows the job failed" }
+      job.errback {
+        puts bugsnag_request_data.inspect
+        Bugsnag.notify(BugsnagFatalException.new("oh dear"), nil, bugsnag_request_data)
+        puts "Callback knows the job failed"
+      }
     end
   
     puts "Finished request"
