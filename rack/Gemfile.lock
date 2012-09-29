@@ -1,5 +1,5 @@
 PATH
-  remote: /Users/james/src/bugsnag/bugsnag-ruby
+  remote: /Users/simon/Projects/bugsnag/bugsnag-ruby
   specs:
     bugsnag (1.2.0.beta)
       httparty (>= 0.5, < 1.0)

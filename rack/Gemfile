@@ -1,4 +1,4 @@
 source 'http://rubygems.org'
 
 gem "rack"
-gem "bugsnag", :path => "/Users/james/src/bugsnag/bugsnag-ruby"
+gem "bugsnag", :path => "../../bugsnag-ruby"
