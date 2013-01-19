@@ -14,8 +14,7 @@ end
 # Include the Bugsnag rack middleware
 use Bugsnag::Rack
 
-# use Rack::Session::Cookie
-
+# Set up urls to respond to
 get "/" do
   "Hello from Sinatra! GET /crash to make me crash."
 end
