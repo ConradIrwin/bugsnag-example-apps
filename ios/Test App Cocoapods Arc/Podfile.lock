@@ -1,18 +1,14 @@
 
 PODS:
-- Bugsnag (2.1.0):
+- Bugsnag (2.2.2):
   - Reachability (~> 3.1)
 - Reachability (3.1.0)
 
 DEPENDENCIES:
-- Bugsnag (from `/Users/simon/Projects/bugsnag/notifiers/bugsnag-ios')
-
-EXTERNAL SOURCES:
-  Bugsnag:
-    :local: /Users/simon/Projects/bugsnag/notifiers/bugsnag-ios
+- Bugsnag
 
 SPEC CHECKSUMS:
-  Bugsnag: 6499c99fe2d0b6fe5caebf695d040e41a0871258
+  Bugsnag: ea5f1c598ab446ca552d1df774a0bc311c8170a8
   Reachability: 1c8584c5f26fa776695efef95caaa50402c94cfb
 
 COCOAPODS: 0.16.1
