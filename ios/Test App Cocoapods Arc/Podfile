@@ -1,2 +1,3 @@
 platform :ios
 pod 'Bugsnag'
+#pod 'Bugsnag', :local => "/Users/simon/Projects/bugsnag/notifiers/bugsnag-ios/"
