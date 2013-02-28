@@ -1,7 +1,7 @@
 PATH
-  remote: ../../bugsnag-ruby
+  remote: /Users/james/src/bugsnag/bugsnag-ruby
   specs:
-    bugsnag (1.2.0.beta)
+    bugsnag (1.2.7)
       httparty (>= 0.5, < 1.0)
       multi_json (~> 1.0)
 
@@ -11,7 +11,7 @@ GEM
     httparty (0.9.0)
       multi_json (~> 1.0)
       multi_xml
-    multi_json (1.3.6)
+    multi_json (1.4.0)
     multi_xml (0.5.1)
     rack (1.4.1)
     rack-protection (1.2.0)

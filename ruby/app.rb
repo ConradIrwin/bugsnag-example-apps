@@ -23,6 +23,16 @@ def my_app
     :user => "james"
   })
 
+  Bugsnag.notify(BugsnagNonFatalException.new("Non-fatal exception"), {
+    :james => {:loves => "tabs"}
+  })
+
+  Bugsnag.notify(BugsnagNonFatalException.new("Non-fatal exception"), {
+    :james => {:loves => "tabs"},
+    :user_id => "123",
+    :context => "my_app"
+  })
+
   raise BugsnagFatalException.new("Crash-o-la")
 end
 

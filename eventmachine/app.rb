@@ -3,6 +3,7 @@ require "bundler"
 require "logger"
 Bundler.require
 
+require "bugsnag/thin"
 
 class BugsnagFatalException < RuntimeError; end
 
@@ -75,7 +76,6 @@ class App < Sinatra::Base
       job = SomeLongRunningJob.new(true)
       job.callback { puts "Callback knows the job finished" }
       job.errback {
-        puts bugsnag_request_data.inspect
         Bugsnag.notify(BugsnagFatalException.new("oh dear"), nil, bugsnag_request_data)
         puts "Callback knows the job failed"
       }
