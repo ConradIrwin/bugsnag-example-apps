@@ -21,7 +21,7 @@ app = Proc.new do |env|
 
   case request.path
   when "/"
-    Rack::Response.new("Hello from Rack! GET /crash to make me crash.")
+    Rack::Response.new("Hello from Rack! <a href='/crash'>Make me crash.</a>")
   when "/crash"
     Bugsnag.before_notify_callbacks << lambda {|notif|
       notif.add_tab :something, {
@@ -31,6 +31,7 @@ app = Proc.new do |env|
     }
 
     raise "Crashtown USA"
+  when "nonfatal_crash"
   else
     Rack::Response.new("Not found", 404)
   end
