@@ -2,6 +2,7 @@ package your.company;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 
 import com.bugsnag.android.Bugsnag;
@@ -20,12 +21,19 @@ public class HelloAndroidActivity extends BugsnagActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		Log.i(TAG, "onCreate");
         setContentView(R.layout.main);
 
-        Bugsnag.register(this, "8f5c0ec341d974b5e6fbdf16cb5cca3f");
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+            .detectAll()
+            .penaltyLog()
+            .build());
+
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+            .detectAll()
+            .penaltyLog()
+            .build());
+
+        Bugsnag.register(this, "8f5c0ec341d974b5e6fbdf16cb5cca3f", true);
         Bugsnag.notify(new RuntimeException("Shit broke in android"));
     }
-
 }
-
