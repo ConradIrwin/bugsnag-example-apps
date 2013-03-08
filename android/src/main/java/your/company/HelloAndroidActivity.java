@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.View;
 
 import com.bugsnag.android.Bugsnag;
 import com.bugsnag.android.BugsnagActivity;
@@ -34,6 +35,13 @@ public class HelloAndroidActivity extends BugsnagActivity {
             .build());
 
         Bugsnag.register(this, "8f5c0ec341d974b5e6fbdf16cb5cca3f", true);
+    }
+
+    public void notify(View view) {
         Bugsnag.notify(new RuntimeException("Shit broke in android"));
+    }
+
+    public void crash(View view) {
+        throw new RuntimeException("Shit broke and caused a crash");
     }
 }
