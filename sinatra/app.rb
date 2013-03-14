@@ -12,6 +12,7 @@ Bugsnag.configure do |config|
 end
 
 # Include the Bugsnag rack middleware
+enable :sessions
 use Bugsnag::Rack
 
 # Set up urls to respond to
