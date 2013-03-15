@@ -35,12 +35,17 @@
     return res.render('index');
   });
 
+  app.get("/notify", function(req, res, next) {
+    bugsnag.notify(new Error("this is the message"));
+    return res.render('index');
+  });
+
   app.get("/uncaught", function(req, res, next) {
     throw new Error("this is the message");
   });
 
   app.get("/callback", function(req, res, next) {
-    return testFunc(process.domain.intercept(function() {
+    return testFunc(bugsnag.intercept(function() {
       return console.log("Will never log");
     }));
   });
@@ -49,6 +54,13 @@
     var eventEmitter;
     eventEmitter = new (require('events').EventEmitter)();
     return eventEmitter.emit("error", new Error("Something went wrong"));
+  });
+
+  app.get("/async/notify", function(req, res, next) {
+    process.nextTick(function() {
+      return bugsnag.notify(new Error("this is the message"));
+    });
+    return res.render('index');
   });
 
   app.get("/async/uncaught", function(req, res, next) {

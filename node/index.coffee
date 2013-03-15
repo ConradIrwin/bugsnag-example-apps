@@ -28,6 +28,10 @@ app.get "/", (req, res, next) ->
   res.render('index')
 
 # SYNC ERRORS
+app.get "/notify", (req, res, next) ->
+  bugsnag.notify new Error("this is the message")
+  res.render('index')
+
 app.get "/uncaught", (req, res, next) ->
   throw new Error("this is the message")
 
@@ -40,8 +44,13 @@ app.get "/emitter", (req, res, next) ->
   eventEmitter.emit "error", new Error("Something went wrong")
 
 # ASYNC ERRORS
+app.get "/async/notify", (req, res, next) ->
+  process.nextTick ->
+    bugsnag.notify new Error("this is the message")
+  res.render('index')
+
 app.get "/async/uncaught", (req, res, next) ->
-  process.nextTick () ->
+  process.nextTick ->
     throw new Error("this is the async message")
 
 app.get "/async/callback", (req, res, next) ->
