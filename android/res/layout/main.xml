@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
@@ -6,20 +5,8 @@
     >
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crash test, dummies."
-        android:padding="20dp" />
+        android:text="HELLO WORLD" />
 
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:text="Notify Bugsnag"
-        android:id="@+id/notify" />
-
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:text="Crash the App"
-        android:id="@+id/crash" />
 </LinearLayout>

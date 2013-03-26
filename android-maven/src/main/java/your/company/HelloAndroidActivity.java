@@ -2,9 +2,10 @@ package your.company;
 
 import android.app.Activity;
 import android.os.Bundle;
-// import android.os.StrictMode;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
+import java.io.IOException;
 
 import com.bugsnag.android.Bugsnag;
 import com.bugsnag.android.BugsnagActivity;
@@ -24,35 +25,28 @@ public class HelloAndroidActivity extends BugsnagActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        // StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-        //     .detectAll()
-        //     .penaltyLog()
-        //     .build());
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+            .detectAll()
+            .penaltyLog()
+            .build());
 
-        // StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-        //     .detectAll()
-        //     .penaltyLog()
-        //     .build());
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+            .detectAll()
+            .penaltyLog()
+            .build());
 
         findViewById(R.id.notify).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Bugsnag.notify(new RuntimeException("Shit broke in android"));
+                Bugsnag.notify(new RuntimeException("Stuff broke in android"));
             }
         });
 
         findViewById(R.id.crash).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                throw new RuntimeException("Shit broke and caused a crash");
+                throw new RuntimeException("Stuff broke and caused a crash");
             }
         });
 
-        findViewById(R.id.ignore_notify).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                throw new IOException("Shit broke but should not notify");
-            }
-        });
-
-        Bugsnag.register(this, "8f5c0ec341d974b5e6fbdf16cb5cca3f", true);
-        Bugsnag.setIgnoreClasses
+        Bugsnag.register(this, "8f5c0ec341d974b5e6fbdf16cb5cca3f");
     }
 }
