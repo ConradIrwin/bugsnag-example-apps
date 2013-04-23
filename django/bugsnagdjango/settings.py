@@ -101,11 +101,9 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-import os
 BUGSNAG = {
-    'api_key': '5e52dddf8c7ec5a30542f657968b1e63',
-    'project_root': "/Users/james/src/tmp/bugsnagdjango",
-    'endpoint': "localhost:8000"
+    'api_key': 'dcc345d219ef5107c6ce8aca68a40af2',
+    'project_root': "/Users/james/src/bugsnag/example-apps/django",
 }
 
 ROOT_URLCONF = 'bugsnagdjango.urls'
