@@ -11,6 +11,7 @@
     notifyReleaseStages: ["production", "development"],
     notifyHost: "localhost",
     notifyPort: 8000,
+    logLevel: "info",
     useSSL: false
   });
 

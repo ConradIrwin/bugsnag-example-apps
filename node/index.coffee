@@ -5,10 +5,11 @@ express = require "express"
 bugsnag = require "bugsnag"
 
 # Load bugsnag notification support
-bugsnag.register("8999dadca0141ee777ef21dfff32e4d7", 
+bugsnag.register("6796ac4207703a9c343bf7777587a4dd", 
   notifyReleaseStages: ["production", "development"],  
   notifyHost: "localhost", 
-  notifyPort: 8000, 
+  notifyPort: 8000,
+  logLevel: "info"
   useSSL: false)
 
 # Configure the web server
