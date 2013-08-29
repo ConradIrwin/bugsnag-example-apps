@@ -9,7 +9,6 @@ bugsnag.register("6796ac4207703a9c343bf7777587a4dd",
   notifyReleaseStages: ["production", "development"],  
   notifyHost: "localhost", 
   notifyPort: 8000,
-  logLevel: "info"
   useSSL: false)
 
 # Configure the web server
@@ -17,10 +16,9 @@ app = express()
 app.use bugsnag.requestHandler
 app.use app.router
 
-app.use bugsnag.errorHandler
 app.use (err, req, res, next) =>
-  res.send "Error occured:<br />#{err.stack}", 500
-  next err
+  bugsnag.errorHandler(err, req, res, next) unless err.domainEmitter || err.domainBound
+
 app.set 'views', __dirname + '/views'
 app.set 'view engine', 'ejs'
 

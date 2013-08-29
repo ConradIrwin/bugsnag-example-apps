@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Bugsnag.h"
+#import "BugsnagEvent.h"
 
 @interface ViewController ()
 

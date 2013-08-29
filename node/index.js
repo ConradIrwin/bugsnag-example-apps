@@ -11,7 +11,6 @@
     notifyReleaseStages: ["production", "development"],
     notifyHost: "localhost",
     notifyPort: 8000,
-    logLevel: "info",
     useSSL: false
   });
 
@@ -21,12 +20,13 @@
 
   app.use(app.router);
 
-  app.use(bugsnag.errorHandler);
-
   app.use(function(err, req, res, next) {
-    res.send("Error occured:<br />" + err.stack, 500);
-    return next(err);
+    if (!(err.domainEmitter || err.domainBound)) {
+      return next(err);
+    }
   });
+
+  app.use(bugsnag.errorHandler);
 
   app.set('views', __dirname + '/views');
 
