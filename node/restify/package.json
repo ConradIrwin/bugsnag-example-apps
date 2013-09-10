@@ -1,0 +1,11 @@
+{
+  "name": "bugsnag-node-example",
+  "version": "1.0.0",
+  "homepage": "http://bugsnag.com",
+  "dependencies": {
+    "bugsnag": "latest",
+    "coffee-script": "latest",
+    "restify": "~2.6.0"
+  },
+  "license": "MIT"
+}

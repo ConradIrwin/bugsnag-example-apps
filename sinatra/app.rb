@@ -5,7 +5,7 @@ Bundler.require
 
 # Configure Bugsnag
 Bugsnag.configure do |config|
-  config.api_key = "c9d60ae4c7e70c4b6c4ebd3e8056d2b8"
+  config.api_key = "36e5bae7d42beabd10010cb5562a21a5"
   config.endpoint = "localhost:8000"
   config.notify_release_stages = ["development", "production"]
   config.logger.level = Logger::INFO
@@ -14,6 +14,8 @@ end
 # Include the Bugsnag rack middleware
 enable :sessions
 use Bugsnag::Rack
+#enable :raise_errors
+#set :show_exceptions, false
 
 # Set up urls to respond to
 get "/" do
@@ -21,5 +23,14 @@ get "/" do
 end
 
 get "/crash" do
-  raise "Crash me baby one more time"
+  raise "Crash me baby one more timedd"
+end
+
+not_found do
+  'This is nowhere to be found.'
+end
+
+error do
+  Bugsnag.notify env['sinatra.error']
+  'Sorry there was a nasty error - ' + env['sinatra.error'].to_s
 end
