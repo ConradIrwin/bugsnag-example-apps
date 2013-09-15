@@ -1,3 +1,2 @@
-platform :ios
-pod 'Bugsnag'
-#pod 'Bugsnag', :local => "/Users/simon/Projects/bugsnag/notifiers/bugsnag-ios/"
+platform :osx
+pod 'Bugsnag', :path => "/Users/simon/Projects/bugsnag/bugsnag-objective-c/"

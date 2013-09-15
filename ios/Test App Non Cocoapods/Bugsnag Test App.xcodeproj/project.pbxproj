@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		100749203726440EA4E45D3E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE4E4C4FB284B448E57166E /* libPods.a */; };
 		F40B874B16AA233500676BB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40B874A16AA233500676BB2 /* UIKit.framework */; };
 		F40B874D16AA233500676BB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40B874C16AA233500676BB2 /* Foundation.framework */; };
 		F40B874F16AA233500676BB2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40B874E16AA233500676BB2 /* CoreGraphics.framework */; };
@@ -20,11 +19,17 @@
 		F40B876416AA233500676BB2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40B876216AA233500676BB2 /* MainStoryboard_iPhone.storyboard */; };
 		F40B876716AA233500676BB2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40B876516AA233500676BB2 /* MainStoryboard_iPad.storyboard */; };
 		F40B876A16AA233500676BB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40B876916AA233500676BB2 /* ViewController.m */; };
+		F495C52317E29DA500B1995A /* Bugsnag.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51317E29DA500B1995A /* Bugsnag.m */; };
+		F495C52417E29DA500B1995A /* BugsnagConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51517E29DA500B1995A /* BugsnagConfiguration.m */; };
+		F495C52517E29DA500B1995A /* BugsnagEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51717E29DA500B1995A /* BugsnagEvent.m */; };
+		F495C52617E29DA500B1995A /* BugsnagMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51A17E29DA500B1995A /* BugsnagMetaData.m */; };
+		F495C52717E29DA500B1995A /* BugsnagNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51C17E29DA500B1995A /* BugsnagNotifier.m */; };
+		F495C52817E29DA500B1995A /* BugsnagReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51F17E29DA500B1995A /* BugsnagReachability.m */; };
+		F495C52917E29DA500B1995A /* BugsnagIosNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C52217E29DA500B1995A /* BugsnagIosNotifier.m */; };
+		F495C52B17E29DF800B1995A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F495C52A17E29DF800B1995A /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42E1807384814FB4ACC1B134 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		BBE4E4C4FB284B448E57166E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40B874616AA233500676BB2 /* Bugsnag Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bugsnag Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40B874A16AA233500676BB2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F40B874C16AA233500676BB2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,6 +47,23 @@
 		F40B876616AA233500676BB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F40B876816AA233500676BB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F40B876916AA233500676BB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F495C51117E29DA500B1995A /* Bugsnag-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bugsnag-Prefix.pch"; sourceTree = "<group>"; };
+		F495C51217E29DA500B1995A /* Bugsnag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bugsnag.h; sourceTree = "<group>"; };
+		F495C51317E29DA500B1995A /* Bugsnag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bugsnag.m; sourceTree = "<group>"; };
+		F495C51417E29DA500B1995A /* BugsnagConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagConfiguration.h; sourceTree = "<group>"; };
+		F495C51517E29DA500B1995A /* BugsnagConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagConfiguration.m; sourceTree = "<group>"; };
+		F495C51617E29DA500B1995A /* BugsnagEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagEvent.h; sourceTree = "<group>"; };
+		F495C51717E29DA500B1995A /* BugsnagEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagEvent.m; sourceTree = "<group>"; };
+		F495C51817E29DA500B1995A /* BugsnagLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagLogger.h; sourceTree = "<group>"; };
+		F495C51917E29DA500B1995A /* BugsnagMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagMetaData.h; sourceTree = "<group>"; };
+		F495C51A17E29DA500B1995A /* BugsnagMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagMetaData.m; sourceTree = "<group>"; };
+		F495C51B17E29DA500B1995A /* BugsnagNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagNotifier.h; sourceTree = "<group>"; };
+		F495C51C17E29DA500B1995A /* BugsnagNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagNotifier.m; sourceTree = "<group>"; };
+		F495C51E17E29DA500B1995A /* BugsnagReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagReachability.h; sourceTree = "<group>"; };
+		F495C51F17E29DA500B1995A /* BugsnagReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagReachability.m; sourceTree = "<group>"; };
+		F495C52117E29DA500B1995A /* BugsnagIosNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagIosNotifier.h; sourceTree = "<group>"; };
+		F495C52217E29DA500B1995A /* BugsnagIosNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagIosNotifier.m; sourceTree = "<group>"; };
+		F495C52A17E29DF800B1995A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F495C52B17E29DF800B1995A /* SystemConfiguration.framework in Frameworks */,
 				F40B874B16AA233500676BB2 /* UIKit.framework in Frameworks */,
 				F40B874D16AA233500676BB2 /* Foundation.framework in Frameworks */,
 				F40B874F16AA233500676BB2 /* CoreGraphics.framework in Frameworks */,
-				100749203726440EA4E45D3E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +84,10 @@
 		F40B873B16AA233500676BB2 = {
 			isa = PBXGroup;
 			children = (
+				F495C52A17E29DF800B1995A /* SystemConfiguration.framework */,
 				F40B875016AA233500676BB2 /* Bugsnag Test App */,
 				F40B874916AA233500676BB2 /* Frameworks */,
 				F40B874716AA233500676BB2 /* Products */,
-				42E1807384814FB4ACC1B134 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,7 +105,6 @@
 				F40B874A16AA233500676BB2 /* UIKit.framework */,
 				F40B874C16AA233500676BB2 /* Foundation.framework */,
 				F40B874E16AA233500676BB2 /* CoreGraphics.framework */,
-				BBE4E4C4FB284B448E57166E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,6 +112,7 @@
 		F40B875016AA233500676BB2 /* Bugsnag Test App */ = {
 			isa = PBXGroup;
 			children = (
+				F495C51017E29DA500B1995A /* bugsnag */,
 				F40B875916AA233500676BB2 /* AppDelegate.h */,
 				F40B875A16AA233500676BB2 /* AppDelegate.m */,
 				F40B876216AA233500676BB2 /* MainStoryboard_iPhone.storyboard */,
@@ -116,6 +138,45 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F495C51017E29DA500B1995A /* bugsnag */ = {
+			isa = PBXGroup;
+			children = (
+				F495C51117E29DA500B1995A /* Bugsnag-Prefix.pch */,
+				F495C51217E29DA500B1995A /* Bugsnag.h */,
+				F495C51317E29DA500B1995A /* Bugsnag.m */,
+				F495C51417E29DA500B1995A /* BugsnagConfiguration.h */,
+				F495C51517E29DA500B1995A /* BugsnagConfiguration.m */,
+				F495C51617E29DA500B1995A /* BugsnagEvent.h */,
+				F495C51717E29DA500B1995A /* BugsnagEvent.m */,
+				F495C51817E29DA500B1995A /* BugsnagLogger.h */,
+				F495C51917E29DA500B1995A /* BugsnagMetaData.h */,
+				F495C51A17E29DA500B1995A /* BugsnagMetaData.m */,
+				F495C51B17E29DA500B1995A /* BugsnagNotifier.h */,
+				F495C51C17E29DA500B1995A /* BugsnagNotifier.m */,
+				F495C51D17E29DA500B1995A /* dependencies */,
+				F495C52017E29DA500B1995A /* iOS */,
+			);
+			path = bugsnag;
+			sourceTree = "<group>";
+		};
+		F495C51D17E29DA500B1995A /* dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F495C51E17E29DA500B1995A /* BugsnagReachability.h */,
+				F495C51F17E29DA500B1995A /* BugsnagReachability.m */,
+			);
+			path = dependencies;
+			sourceTree = "<group>";
+		};
+		F495C52017E29DA500B1995A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F495C52117E29DA500B1995A /* BugsnagIosNotifier.h */,
+				F495C52217E29DA500B1995A /* BugsnagIosNotifier.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,12 +184,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F40B876D16AA233500676BB2 /* Build configuration list for PBXNativeTarget "Bugsnag Test App" */;
 			buildPhases = (
-				0E579FC164E842FBB5C923B7 /* Check Pods Manifest.lock */,
 				F40B874216AA233500676BB2 /* Sources */,
 				F40B874316AA233500676BB2 /* Frameworks */,
 				F40B874416AA233500676BB2 /* Resources */,
-				EC9C64C5098541749BAC1444 /* Copy Pods Resources */,
-				F44DECEF17D94F4A006ACC86 /* ShellScript */,
+				F495C52C17E2A40100B1995A /* Upload Bugsnag Symbolication Information */,
 			);
 			buildRules = (
 			);
@@ -182,48 +241,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E579FC164E842FBB5C923B7 /* Check Pods Manifest.lock */ = {
+		F495C52C17E2A40100B1995A /* Upload Bugsnag Symbolication Information */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "Upload Bugsnag Symbolication Information";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EC9C64C5098541749BAC1444 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F44DECEF17D94F4A006ACC86 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /usr/bin/ruby;
-			shellScript = "\nif ENV[\"DEBUG_INFORMATION_FORMAT\"] != \"dwarf-with-dsym\"\nexit\nend\n\nfork do\nProcess.setsid\nSTDIN.reopen(\"/dev/null\")\nSTDOUT.reopen(\"/dev/null\", \"a\")\nSTDERR.reopen(\"/dev/null\", \"a\")\n\nrequire 'shellwords'\n\nDir[\"#{ENV[\"DWARF_DSYM_FOLDER_PATH\"]}/#{ENV[\"DWARF_DSYM_FILE_NAME\"]}/Contents/Resources/DWARF/*\"].each do |dsym|\nsystem(\"curl -F dsym=@#{Shellwords.escape(dsym)} -F projectRoot=#{Shellwords.escape(ENV[\"PROJECT_DIR\"])} http://upload.bugsnag.com\")\nend\nend\n";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -235,6 +265,13 @@
 				F40B875716AA233500676BB2 /* main.m in Sources */,
 				F40B875B16AA233500676BB2 /* AppDelegate.m in Sources */,
 				F40B876A16AA233500676BB2 /* ViewController.m in Sources */,
+				F495C52317E29DA500B1995A /* Bugsnag.m in Sources */,
+				F495C52417E29DA500B1995A /* BugsnagConfiguration.m in Sources */,
+				F495C52517E29DA500B1995A /* BugsnagEvent.m in Sources */,
+				F495C52617E29DA500B1995A /* BugsnagMetaData.m in Sources */,
+				F495C52717E29DA500B1995A /* BugsnagNotifier.m in Sources */,
+				F495C52817E29DA500B1995A /* BugsnagReachability.m in Sources */,
+				F495C52917E29DA500B1995A /* BugsnagIosNotifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +364,6 @@
 		};
 		F40B876E16AA233500676BB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42E1807384814FB4ACC1B134 /* Pods.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
@@ -346,7 +382,6 @@
 		};
 		F40B876F16AA233500676BB2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42E1807384814FB4ACC1B134 /* Pods.xcconfig */;
 			buildSettings = {
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;

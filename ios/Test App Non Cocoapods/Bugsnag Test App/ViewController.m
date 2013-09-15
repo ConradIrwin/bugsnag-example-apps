@@ -28,7 +28,7 @@
 }
 
 - (IBAction)generateException:(id)sender {
-    [NSException raise:@"BugsnagException" format:@"Test exception. New message!"];
+    [NSException raise:@"BugsnagException" format:@"Test exception."];
 }
 
 - (IBAction)generateSignal:(id)sender {
@@ -40,7 +40,7 @@
 }
 
 - (IBAction)nonFatalException:(id)sender {
-    [Bugsnag notify:[NSException exceptionWithName:@"ExceptionName" reason:@"Something bad happened version 2" userInfo:nil] withData:nil];
+    [Bugsnag notify:[NSException exceptionWithName:@"ExceptionName" reason:@"Something bad happened" userInfo:nil] withData:nil];
 }
 
 - (IBAction)nonFatalWithMetadata:(id)sender {
