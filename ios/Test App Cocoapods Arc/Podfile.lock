@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: /Users/simon/Projects/bugsnag/bugsnag-objective-c/
 
 SPEC CHECKSUMS:
-  Bugsnag: fdad8b5b5e54791100e8a490d0bc279b92806eb1
+  Bugsnag: 21cd4061c5c9cafa705fbcaeab97e81283a312e7
   Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
 
 COCOAPODS: 0.24.0
