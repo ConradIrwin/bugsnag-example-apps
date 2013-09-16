@@ -62,20 +62,7 @@ fi
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>BBE4E4C4FB284B448E57166E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DA795B9FDC7442E8B30094BB</key>
+		<key>5142A2F8286744A694BDB5BA</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
@@ -95,8 +82,7 @@ fi
 			<string>/usr/bin/ruby</string>
 			<key>shellScript</key>
 			<string>
-if ENV["EFFECTIVE_PLATFORM_NAME"] == "-iphonesimulator" ||
-   ENV["DEBUG_INFORMATION_FORMAT"] != "dwarf-with-dsym"
+if ENV["DEBUG_INFORMATION_FORMAT"] != "dwarf-with-dsym"
   exit
 end
 
@@ -115,6 +101,19 @@ end
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
+		</dict>
+		<key>BBE4E4C4FB284B448E57166E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>EC9C64C5098541749BAC1444</key>
 		<dict>
@@ -266,7 +265,7 @@ end
 				<string>F40B874316AA233500676BB2</string>
 				<string>F40B874416AA233500676BB2</string>
 				<string>EC9C64C5098541749BAC1444</string>
-				<string>DA795B9FDC7442E8B30094BB</string>
+				<string>5142A2F8286744A694BDB5BA</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
