@@ -10,6 +10,12 @@
 #import <sys/sysctl.h>
 #import <mach/mach.h>
 
+#ifdef TARGET_IPHONE_SIMULATOR
+#if TARGET_IPHONE_SIMULATOR
+#import <UIKit/UIKit.h>
+#endif
+#endif
+
 #import "BugsnagNotifier.h"
 #import "BugsnagLogger.h"
 
@@ -18,6 +24,11 @@
 - (void) addDiagnosticsToEvent:(BugsnagEvent*)event;
 
 @property (readonly) NSDictionary* memoryStats;
+@property (readonly) NSString *model;
+@property (readonly) NSString* machine;
+@property (readonly) NSString* networkReachability;
+@property (readonly) NSString* appVersion;
+@property (readonly) NSString* osVersion;
 @end
 
 @implementation BugsnagNotifier
@@ -26,7 +37,12 @@
     if((self = [super init])) {
         self.configuration = configuration;
         
+        if (self.configuration.appVersion == nil) self.configuration.appVersion = self.appVersion;
+        if (self.configuration.osVersion == nil) self.configuration.osVersion = self.osVersion;
+        if (self.configuration.userId == nil) self.configuration.userId = self.userUUID;
+        
         [self.configuration.metaData addAttribute:@"Machine" withValue:self.machine toTabWithName:@"device"];
+        [self.configuration.metaData addAttribute:@"Model" withValue:self.model toTabWithName:@"device"];
         
         [self beforeNotify:^(BugsnagEvent *event) {
             [self addDiagnosticsToEvent:event];
@@ -34,9 +50,12 @@
         }];
         
         self.notifierName = @"Bugsnag Objective-C";
-        //TODO:SM Pull this out from somewhere in cocoapods if poss
+#ifdef COCOAPODS_VERSION_MAJOR_Bugsnag
+        self.notifierVersion = [NSString stringWithFormat:@"%i.%i.%i", COCOAPODS_VERSION_MAJOR_Bugsnag, COCOAPODS_VERSION_MINOR_Bugsnag, COCOAPODS_VERSION_PATCH_Bugsnag];
+#else
         self.notifierVersion = @"3.0.0";
-        self.notifierURL = @"https://github.com/bugsnag/bugsnag-objective-c";
+#endif
+        self.notifierURL = @"https://github.com/bugsnag/bugsnag-cocoa";
     }
     return self;
 }
@@ -49,8 +68,15 @@
     [event addAttribute:@"Application Version" withValue:self.configuration.appVersion toTabWithName:@"application"];
     
     [event addAttribute:@"OS Version" withValue:self.configuration.osVersion toTabWithName:@"device"];
-    [event addAttribute:@"Memory" withValue:self.memoryStats toTabWithName:@"device"];
     [event addAttribute:@"Network" withValue:self.networkReachability toTabWithName:@"device"];
+    
+#ifdef TARGET_IPHONE_SIMULATOR
+#if !TARGET_IPHONE_SIMULATOR
+    [event addAttribute:@"Memory" withValue:self.memoryStats toTabWithName:@"device"];
+#endif
+#else
+    [event addAttribute:@"Memory" withValue:self.memoryStats toTabWithName:@"device"];
+#endif
 }
 
 - (void) notifySignal:(int)signal {
@@ -189,6 +215,7 @@
     [payload setObject:self.configuration.apiKey forKey:@"apiKey"];
     [payload setObject:self.userUUID forKey:@"userId"];
     [payload setObject:self.machine forKey:@"machine"];
+    [payload setObject:self.model forKey:@"model"];
     if (self.configuration.osVersion != nil ) [payload setObject:self.configuration.osVersion forKey:@"osVersion"];
     if (self.configuration.appVersion != nil ) [payload setObject:self.configuration.appVersion forKey:@"appVersion"];
     
@@ -264,12 +291,22 @@
     return machine;
 }
 
+- (NSString *) model {
+    size_t size = 256;
+	char *modelCString = malloc(size);
+    sysctlbyname("hw.model", modelCString, &size, NULL, 0);
+    NSString *model = [NSString stringWithCString:modelCString encoding:NSUTF8StringEncoding];
+    free(modelCString);
+    
+    return model;
+}
+
 - (NSString *)fileSize:(NSNumber *)value {
     float fileSize = [value floatValue];
     if (fileSize<1023.0f)
         return([NSString stringWithFormat:@"%i bytes",[value intValue]]);
     fileSize = fileSize / 1024.0f;
-    if ([value intValue]<1023.0f)
+    if (fileSize<1023.0f)
         return([NSString stringWithFormat:@"%1.1f KB",fileSize]);
     fileSize = fileSize / 1024.0f;
     if (fileSize<1023.0f)
@@ -293,9 +330,7 @@
 }
 
 - (NSDictionary *) memoryStats {
-    natural_t usedMem = 0;
-    natural_t freeMem = 0;
-    natural_t totalMem = 0;
+    NSMutableDictionary *memoryStats = [NSMutableDictionary dictionary];
     
     struct task_basic_info info;
     mach_msg_type_number_t size = sizeof(info);
@@ -304,16 +339,50 @@
                                    (task_info_t)&info,
                                    &size);
     if( kerr == KERN_SUCCESS ) {
-        usedMem = info.resident_size;
-        totalMem = info.virtual_size;
-        freeMem = totalMem - usedMem;
-        return [NSDictionary dictionaryWithObjectsAndKeys:
-                [self fileSize:[NSNumber numberWithInt:freeMem]], @"Free",
-                [self fileSize:[NSNumber numberWithInt:totalMem]], @"Total",
-                [self fileSize:[NSNumber numberWithInt:usedMem]], @"Used", nil];
-    } else {
-        return nil;
+        [memoryStats setObject:[self fileSize:[NSNumber numberWithInteger:info.resident_size]] forKey:@"App Using"];
     }
+    
+    uint64_t total = 0;
+    uint64_t pageSize = 0;
+    uint64_t pagesFree = 0;
+    size_t sysCtlSize = sizeof(uint64_t);
+    if (!sysctlbyname("hw.memsize", &total, &sysCtlSize, NULL, 0)) {
+        [memoryStats setObject:[self fileSize:[NSNumber numberWithInteger:total]] forKey:@"Total"];
+    }
+    
+    if (!sysctlbyname("vm.page_free_count", &pagesFree, &sysCtlSize, NULL, 0)) {
+        if (!sysctlbyname("hw.pagesize", &pageSize, &sysCtlSize, NULL, 0)) {
+            [memoryStats setObject:[self fileSize:[NSNumber numberWithInteger:pagesFree*pageSize]] forKey:@"Free"];
+            [memoryStats setObject:[self fileSize:[NSNumber numberWithInteger:total-(pagesFree*pageSize)]] forKey:@"Used"];
+        }
+    }
+    
+    return memoryStats;
+}
+
+- (NSString *) appVersion {
+    NSString *bundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString *versionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    if (bundleVersion != nil && versionString != nil && ![bundleVersion isEqualToString:versionString]) {
+        return [NSString stringWithFormat:@"%@ (%@)", versionString, bundleVersion];
+    } else if (bundleVersion != nil) {
+        return bundleVersion;
+    } else if(versionString != nil) {
+        return versionString;
+    }
+    return @"";
+}
+
+- (NSString *) osVersion {
+#ifdef TARGET_IPHONE_SIMULATOR
+#if TARGET_IPHONE_SIMULATOR
+	return [[UIDevice currentDevice] systemVersion];
+#else
+    return [[NSProcessInfo processInfo] operatingSystemVersionString];
+#endif
+#else
+	return [[NSProcessInfo processInfo] operatingSystemVersionString];
+#endif
 }
 
 @end

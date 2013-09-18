@@ -1,2 +1,2 @@
 platform :osx
-pod 'Bugsnag', :path => "/Users/simon/Projects/bugsnag/bugsnag-objective-c/"
+pod 'Bugsnag', :git => "git@github.com:bugsnag/bugsnag-cocoa.git"

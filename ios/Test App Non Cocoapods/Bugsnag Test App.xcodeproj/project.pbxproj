@@ -19,14 +19,14 @@
 		F40B876416AA233500676BB2 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40B876216AA233500676BB2 /* MainStoryboard_iPhone.storyboard */; };
 		F40B876716AA233500676BB2 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40B876516AA233500676BB2 /* MainStoryboard_iPad.storyboard */; };
 		F40B876A16AA233500676BB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40B876916AA233500676BB2 /* ViewController.m */; };
-		F495C52317E29DA500B1995A /* Bugsnag.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51317E29DA500B1995A /* Bugsnag.m */; };
-		F495C52417E29DA500B1995A /* BugsnagConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51517E29DA500B1995A /* BugsnagConfiguration.m */; };
-		F495C52517E29DA500B1995A /* BugsnagEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51717E29DA500B1995A /* BugsnagEvent.m */; };
-		F495C52617E29DA500B1995A /* BugsnagMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51A17E29DA500B1995A /* BugsnagMetaData.m */; };
-		F495C52717E29DA500B1995A /* BugsnagNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51C17E29DA500B1995A /* BugsnagNotifier.m */; };
-		F495C52817E29DA500B1995A /* BugsnagReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C51F17E29DA500B1995A /* BugsnagReachability.m */; };
-		F495C52917E29DA500B1995A /* BugsnagIosNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = F495C52217E29DA500B1995A /* BugsnagIosNotifier.m */; };
 		F495C52B17E29DF800B1995A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F495C52A17E29DF800B1995A /* SystemConfiguration.framework */; };
+		F4DE7D0317E925E600BFD1C8 /* Bugsnag.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE7CF017E925E600BFD1C8 /* Bugsnag.m */; };
+		F4DE7D0417E925E600BFD1C8 /* BugsnagConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE7CF217E925E600BFD1C8 /* BugsnagConfiguration.m */; };
+		F4DE7D0517E925E600BFD1C8 /* BugsnagEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE7CF417E925E600BFD1C8 /* BugsnagEvent.m */; };
+		F4DE7D0617E925E600BFD1C8 /* BugsnagMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE7CF717E925E600BFD1C8 /* BugsnagMetaData.m */; };
+		F4DE7D0717E925E600BFD1C8 /* BugsnagNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE7CF917E925E600BFD1C8 /* BugsnagNotifier.m */; };
+		F4DE7D0817E925E600BFD1C8 /* BugsnagReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE7CFC17E925E600BFD1C8 /* BugsnagReachability.m */; };
+		F4DE7D0917E925E600BFD1C8 /* BugsnagIosNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DE7CFF17E925E600BFD1C8 /* BugsnagIosNotifier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,23 +47,22 @@
 		F40B876616AA233500676BB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F40B876816AA233500676BB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F40B876916AA233500676BB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F495C51117E29DA500B1995A /* Bugsnag-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bugsnag-Prefix.pch"; sourceTree = "<group>"; };
-		F495C51217E29DA500B1995A /* Bugsnag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bugsnag.h; sourceTree = "<group>"; };
-		F495C51317E29DA500B1995A /* Bugsnag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bugsnag.m; sourceTree = "<group>"; };
-		F495C51417E29DA500B1995A /* BugsnagConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagConfiguration.h; sourceTree = "<group>"; };
-		F495C51517E29DA500B1995A /* BugsnagConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagConfiguration.m; sourceTree = "<group>"; };
-		F495C51617E29DA500B1995A /* BugsnagEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagEvent.h; sourceTree = "<group>"; };
-		F495C51717E29DA500B1995A /* BugsnagEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagEvent.m; sourceTree = "<group>"; };
-		F495C51817E29DA500B1995A /* BugsnagLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagLogger.h; sourceTree = "<group>"; };
-		F495C51917E29DA500B1995A /* BugsnagMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagMetaData.h; sourceTree = "<group>"; };
-		F495C51A17E29DA500B1995A /* BugsnagMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagMetaData.m; sourceTree = "<group>"; };
-		F495C51B17E29DA500B1995A /* BugsnagNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagNotifier.h; sourceTree = "<group>"; };
-		F495C51C17E29DA500B1995A /* BugsnagNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagNotifier.m; sourceTree = "<group>"; };
-		F495C51E17E29DA500B1995A /* BugsnagReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagReachability.h; sourceTree = "<group>"; };
-		F495C51F17E29DA500B1995A /* BugsnagReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagReachability.m; sourceTree = "<group>"; };
-		F495C52117E29DA500B1995A /* BugsnagIosNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagIosNotifier.h; sourceTree = "<group>"; };
-		F495C52217E29DA500B1995A /* BugsnagIosNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagIosNotifier.m; sourceTree = "<group>"; };
 		F495C52A17E29DF800B1995A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F4DE7CEF17E925E600BFD1C8 /* Bugsnag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bugsnag.h; sourceTree = "<group>"; };
+		F4DE7CF017E925E600BFD1C8 /* Bugsnag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bugsnag.m; sourceTree = "<group>"; };
+		F4DE7CF117E925E600BFD1C8 /* BugsnagConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagConfiguration.h; sourceTree = "<group>"; };
+		F4DE7CF217E925E600BFD1C8 /* BugsnagConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagConfiguration.m; sourceTree = "<group>"; };
+		F4DE7CF317E925E600BFD1C8 /* BugsnagEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagEvent.h; sourceTree = "<group>"; };
+		F4DE7CF417E925E600BFD1C8 /* BugsnagEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagEvent.m; sourceTree = "<group>"; };
+		F4DE7CF517E925E600BFD1C8 /* BugsnagLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagLogger.h; sourceTree = "<group>"; };
+		F4DE7CF617E925E600BFD1C8 /* BugsnagMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagMetaData.h; sourceTree = "<group>"; };
+		F4DE7CF717E925E600BFD1C8 /* BugsnagMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagMetaData.m; sourceTree = "<group>"; };
+		F4DE7CF817E925E600BFD1C8 /* BugsnagNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagNotifier.h; sourceTree = "<group>"; };
+		F4DE7CF917E925E600BFD1C8 /* BugsnagNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagNotifier.m; sourceTree = "<group>"; };
+		F4DE7CFB17E925E600BFD1C8 /* BugsnagReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagReachability.h; sourceTree = "<group>"; };
+		F4DE7CFC17E925E600BFD1C8 /* BugsnagReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagReachability.m; sourceTree = "<group>"; };
+		F4DE7CFE17E925E600BFD1C8 /* BugsnagIosNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagIosNotifier.h; sourceTree = "<group>"; };
+		F4DE7CFF17E925E600BFD1C8 /* BugsnagIosNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagIosNotifier.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +111,7 @@
 		F40B875016AA233500676BB2 /* Bugsnag Test App */ = {
 			isa = PBXGroup;
 			children = (
-				F495C51017E29DA500B1995A /* bugsnag */,
+				F4DE7CEE17E925E500BFD1C8 /* bugsnag */,
 				F40B875916AA233500676BB2 /* AppDelegate.h */,
 				F40B875A16AA233500676BB2 /* AppDelegate.m */,
 				F40B876216AA233500676BB2 /* MainStoryboard_iPhone.storyboard */,
@@ -138,41 +137,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F495C51017E29DA500B1995A /* bugsnag */ = {
+		F4DE7CEE17E925E500BFD1C8 /* bugsnag */ = {
 			isa = PBXGroup;
 			children = (
-				F495C51117E29DA500B1995A /* Bugsnag-Prefix.pch */,
-				F495C51217E29DA500B1995A /* Bugsnag.h */,
-				F495C51317E29DA500B1995A /* Bugsnag.m */,
-				F495C51417E29DA500B1995A /* BugsnagConfiguration.h */,
-				F495C51517E29DA500B1995A /* BugsnagConfiguration.m */,
-				F495C51617E29DA500B1995A /* BugsnagEvent.h */,
-				F495C51717E29DA500B1995A /* BugsnagEvent.m */,
-				F495C51817E29DA500B1995A /* BugsnagLogger.h */,
-				F495C51917E29DA500B1995A /* BugsnagMetaData.h */,
-				F495C51A17E29DA500B1995A /* BugsnagMetaData.m */,
-				F495C51B17E29DA500B1995A /* BugsnagNotifier.h */,
-				F495C51C17E29DA500B1995A /* BugsnagNotifier.m */,
-				F495C51D17E29DA500B1995A /* dependencies */,
-				F495C52017E29DA500B1995A /* iOS */,
+				F4DE7CEF17E925E600BFD1C8 /* Bugsnag.h */,
+				F4DE7CF017E925E600BFD1C8 /* Bugsnag.m */,
+				F4DE7CF117E925E600BFD1C8 /* BugsnagConfiguration.h */,
+				F4DE7CF217E925E600BFD1C8 /* BugsnagConfiguration.m */,
+				F4DE7CF317E925E600BFD1C8 /* BugsnagEvent.h */,
+				F4DE7CF417E925E600BFD1C8 /* BugsnagEvent.m */,
+				F4DE7CF517E925E600BFD1C8 /* BugsnagLogger.h */,
+				F4DE7CF617E925E600BFD1C8 /* BugsnagMetaData.h */,
+				F4DE7CF717E925E600BFD1C8 /* BugsnagMetaData.m */,
+				F4DE7CF817E925E600BFD1C8 /* BugsnagNotifier.h */,
+				F4DE7CF917E925E600BFD1C8 /* BugsnagNotifier.m */,
+				F4DE7CFA17E925E600BFD1C8 /* dependencies */,
+				F4DE7CFD17E925E600BFD1C8 /* iOS */,
 			);
 			path = bugsnag;
 			sourceTree = "<group>";
 		};
-		F495C51D17E29DA500B1995A /* dependencies */ = {
+		F4DE7CFA17E925E600BFD1C8 /* dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				F495C51E17E29DA500B1995A /* BugsnagReachability.h */,
-				F495C51F17E29DA500B1995A /* BugsnagReachability.m */,
+				F4DE7CFB17E925E600BFD1C8 /* BugsnagReachability.h */,
+				F4DE7CFC17E925E600BFD1C8 /* BugsnagReachability.m */,
 			);
 			path = dependencies;
 			sourceTree = "<group>";
 		};
-		F495C52017E29DA500B1995A /* iOS */ = {
+		F4DE7CFD17E925E600BFD1C8 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F495C52117E29DA500B1995A /* BugsnagIosNotifier.h */,
-				F495C52217E29DA500B1995A /* BugsnagIosNotifier.m */,
+				F4DE7CFE17E925E600BFD1C8 /* BugsnagIosNotifier.h */,
+				F4DE7CFF17E925E600BFD1C8 /* BugsnagIosNotifier.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -252,8 +250,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "";
+			shellPath = /usr/bin/ruby;
+			shellScript = "if ENV[\"DEBUG_INFORMATION_FORMAT\"] != \"dwarf-with-dsym\"\n    exit\nend\n\nfork do\n    Process.setsid\n    STDIN.reopen(\"/dev/null\")\n    STDOUT.reopen(\"/dev/null\", \"a\")\n    STDERR.reopen(\"/dev/null\", \"a\")\n\n    require 'shellwords'\n\n    Dir[\"#{ENV[\"DWARF_DSYM_FOLDER_PATH\"]}/#{ENV[\"DWARF_DSYM_FILE_NAME\"]}/Contents/Resources/DWARF/*\"].each do |dsym|\n        system(\"curl -F dsym=@#{Shellwords.escape(dsym)} -F projectRoot=#{Shellwords.escape(ENV[\"PROJECT_DIR\"])} https://upload.bugsnag.com/\")\n    end\nend";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -265,13 +263,13 @@
 				F40B875716AA233500676BB2 /* main.m in Sources */,
 				F40B875B16AA233500676BB2 /* AppDelegate.m in Sources */,
 				F40B876A16AA233500676BB2 /* ViewController.m in Sources */,
-				F495C52317E29DA500B1995A /* Bugsnag.m in Sources */,
-				F495C52417E29DA500B1995A /* BugsnagConfiguration.m in Sources */,
-				F495C52517E29DA500B1995A /* BugsnagEvent.m in Sources */,
-				F495C52617E29DA500B1995A /* BugsnagMetaData.m in Sources */,
-				F495C52717E29DA500B1995A /* BugsnagNotifier.m in Sources */,
-				F495C52817E29DA500B1995A /* BugsnagReachability.m in Sources */,
-				F495C52917E29DA500B1995A /* BugsnagIosNotifier.m in Sources */,
+				F4DE7D0317E925E600BFD1C8 /* Bugsnag.m in Sources */,
+				F4DE7D0417E925E600BFD1C8 /* BugsnagConfiguration.m in Sources */,
+				F4DE7D0517E925E600BFD1C8 /* BugsnagEvent.m in Sources */,
+				F4DE7D0617E925E600BFD1C8 /* BugsnagMetaData.m in Sources */,
+				F4DE7D0717E925E600BFD1C8 /* BugsnagNotifier.m in Sources */,
+				F4DE7D0817E925E600BFD1C8 /* BugsnagReachability.m in Sources */,
+				F4DE7D0917E925E600BFD1C8 /* BugsnagIosNotifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,8 @@
     static NSString *notiferClass = @"BugsnagIosNotifier";
 #elif TARGET_OS_MAC
     // Other kinds of Mac OS
+    #import "BugsnagOSXNotifier.h"
+    static NSString *notiferClass = @"BugsnagOSXNotifier";
 #else
     // Unsupported platform
     #import "BugsnagNotifier.h"
@@ -28,7 +30,6 @@ static BugsnagNotifier *notifier = nil;
 
 /*
  TODO:
- - We should report low memory kills and I dont think we do right now.
  - We should access the ASL http://www.cocoanetics.com/2011/03/accessing-the-ios-system-log/
  */
 
@@ -101,7 +102,7 @@ void handle_exception(NSException *exception) {
     
     for (NSUInteger i = 0; i < signals_count; i++) {
         int signalType = signals[i];
-        if (signal(signalType, handle_signal) != 0) {
+        if (signal(signalType, handle_signal) == SIG_ERR) {
             BugsnagLog(@"Unable to register signal handler for %s", strsignal(signalType));
         }
     }
@@ -112,6 +113,10 @@ void handle_exception(NSException *exception) {
         return notifier.configuration;
     }
     return nil;
+}
+
++ (BugsnagConfiguration*)instance {
+    return [self configuration];
 }
 
 + (BugsnagNotifier*)notifier {

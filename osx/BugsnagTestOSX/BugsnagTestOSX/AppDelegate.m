@@ -14,13 +14,14 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    [Bugsnag startBugsnagWithApiKey:@"cdbbf0a5fffb59cbb58a088eb87c55eb"];
+    [Bugsnag startBugsnagWithApiKey:@"ad5eb405d9f5b28b42fe62c43abb87bc"];
+    //[Bugsnag configuration].notifyEndpoint = @"http://localhost:8000";
     [self.button setTarget:self];
     [self.button setAction:@selector(buttonClick:)];
 }
 
 - (void) buttonClick:(NSButton*) button {
-    [Bugsnag notify:[NSException exceptionWithName:@"className" reason:@"message" userInfo:nil]];
+    @throw [NSException exceptionWithName:@"className" reason:@"message" userInfo:nil];
 }
 
 @end

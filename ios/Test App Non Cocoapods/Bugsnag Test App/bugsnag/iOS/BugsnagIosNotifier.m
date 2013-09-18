@@ -11,8 +11,6 @@
 #import "BugsnagIosNotifier.h"
 
 @interface BugsnagIosNotifier ()
-@property (readonly) NSString* appVersion;
-@property (readonly) NSString* osVersion;
 @property (readonly) NSString* topMostViewController;
 @property (atomic) BOOL inForeground;
 
@@ -25,13 +23,7 @@
 
 - (id) initWithConfiguration:(BugsnagConfiguration*) configuration {
     if((self = [super initWithConfiguration:configuration])) {
-        if (self.configuration.appVersion == nil) self.configuration.appVersion = self.appVersion;
-        if (self.configuration.osVersion == nil) self.configuration.osVersion = self.osVersion;
-        if (self.configuration.userId == nil) self.configuration.userId = self.userUUID;
-        
-        [self.configuration.metaData addAttribute:@"Machine" withValue:self.machine toTabWithName:@"device"];
-
-        self.notifierName = @"Bugsnag iOS Notifier";
+        self.notifierName = @"iOS Bugsnag Notifier";
         self.inForeground = YES;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -51,27 +43,6 @@
     
     [event addAttribute:@"Top Most View Controller" withValue:topMostViewController toTabWithName:@"application"];
     [event addAttribute:@"In Foreground" withValue:[NSNumber numberWithBool:self.inForeground] toTabWithName:@"application"];
-}
-
-- (NSString *) appVersion {
-    NSString *bundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-    NSString *versionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    if (bundleVersion != nil && versionString != nil && ![bundleVersion isEqualToString:versionString]) {
-        return [NSString stringWithFormat:@"%@ (%@)", versionString, bundleVersion];
-    } else if (bundleVersion != nil) {
-        return bundleVersion;
-    } else if(versionString != nil) {
-        return versionString;
-    }
-    return @"";
-}
-
-- (NSString *) osVersion {
-#if TARGET_IPHONE_SIMULATOR
-	return [[UIDevice currentDevice] systemVersion];
-#else
-	return [[NSProcessInfo processInfo] operatingSystemVersionString];
-#endif
 }
 
 - (NSString *) userUUID {
