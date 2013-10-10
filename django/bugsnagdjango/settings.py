@@ -103,7 +103,8 @@ MIDDLEWARE_CLASSES = (
 
 BUGSNAG = {
     'api_key': 'dcc345d219ef5107c6ce8aca68a40af2',
-    'project_root': "/Users/james/src/bugsnag/example-apps/django",
+    'project_root': "/Users/simon/Projects/bugsnag/bugsnag-example-apps/django",
+    'auto_notify': True
 }
 
 ROOT_URLCONF = 'bugsnagdjango.urls'
@@ -148,9 +149,18 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'bugsnag': {
+            'level': "ERROR",
+            'class': 'bugsnag.handlers.BugsnagHandler',
         }
     },
     'loggers': {
+        'bugsnag': {
+            'handlers': ["bugsnag"],
+            'level': 'ERROR',
+            'propagate': True
+        },
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',

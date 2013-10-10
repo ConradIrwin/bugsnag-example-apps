@@ -1,0 +1,17 @@
+PODS:
+  - Bugsnag (3.0.0):
+    - Reachability
+  - Reachability (3.1.1)
+
+DEPENDENCIES:
+  - Bugsnag (from `git@github.com:bugsnag/bugsnag-cocoa.git`)
+
+EXTERNAL SOURCES:
+  Bugsnag:
+    :git: git@github.com:bugsnag/bugsnag-cocoa.git
+
+SPEC CHECKSUMS:
+  Bugsnag: 7fdca34faeb347e75352b869948903293db11256
+  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
+
+COCOAPODS: 0.24.0

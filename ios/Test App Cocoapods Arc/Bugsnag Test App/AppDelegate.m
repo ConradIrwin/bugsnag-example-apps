@@ -13,7 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Bugsnag startBugsnagWithApiKey:@"de9c8cc8bfaab7d0f1f20d9a570bded8"];
+    [Bugsnag startBugsnagWithApiKey:@"b967465c41754a9a1eee8a9454d6db1a"];
     // Override point for customization after application launch.
     return YES;
 }

@@ -1,3 +1,2 @@
-platform :ios
-pod 'Bugsnag'
-#pod 'Bugsnag', :local => "/Users/simon/Projects/bugsnag/notifiers/bugsnag-ios/"
+platform :osx
+pod 'Bugsnag', :git => "git@github.com:bugsnag/bugsnag-cocoa.git"
