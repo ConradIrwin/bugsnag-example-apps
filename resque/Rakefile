@@ -1,2 +1,2 @@
 require 'resque/tasks'
-require_relative './my_worker'
+require_relative './worker'

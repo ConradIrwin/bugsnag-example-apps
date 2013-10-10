@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "./my_worker.rb"
+require_relative "./worker.rb"
 
-Resque.enqueue MyWorker
+Resque.enqueue Worker
