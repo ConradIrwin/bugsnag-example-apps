@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+
+gem "resque"
+gem "rake"
+gem "bugsnag", :path => "/Users/james/src/bugsnag/bugsnag-ruby"
