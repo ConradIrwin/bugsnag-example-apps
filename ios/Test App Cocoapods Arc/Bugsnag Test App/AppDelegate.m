@@ -13,7 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Bugsnag startBugsnagWithApiKey:@"b967465c41754a9a1eee8a9454d6db1a"];
+    [Bugsnag startBugsnagWithApiKey:@"664e095195d1cf273e2e43ce0c04b779"];
+    [Bugsnag configuration].notifyEndpoint = @"http://192.168.1.130:8000";
     // Override point for customization after application launch.
     return YES;
 }

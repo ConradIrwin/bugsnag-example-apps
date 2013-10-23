@@ -15,7 +15,10 @@
 {
     // Insert code here to initialize your application
     [Bugsnag startBugsnagWithApiKey:@"ad5eb405d9f5b28b42fe62c43abb87bc"];
-    //[Bugsnag configuration].notifyEndpoint = @"http://localhost:8000";
+    [[Bugsnag notifier] beforeNotify:^BOOL(BugsnagEvent *event) {
+        NSLog(@"before Notify!");
+        return NO;
+    }];
     [self.button setTarget:self];
     [self.button setAction:@selector(buttonClick:)];
 }

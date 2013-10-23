@@ -1,17 +1,17 @@
 PODS:
-  - Bugsnag (3.0.0):
+  - Bugsnag (3.0.1):
     - Reachability
   - Reachability (3.1.1)
 
 DEPENDENCIES:
-  - Bugsnag (from `/Users/simon/Projects/bugsnag/bugsnag-objective-c/`)
+  - Bugsnag (from `~/Projects/bugsnag/bugsnag-cocoa/`)
 
 EXTERNAL SOURCES:
   Bugsnag:
-    :path: /Users/simon/Projects/bugsnag/bugsnag-objective-c/
+    :path: ~/Projects/bugsnag/bugsnag-cocoa/
 
 SPEC CHECKSUMS:
-  Bugsnag: 21cd4061c5c9cafa705fbcaeab97e81283a312e7
+  Bugsnag: a2856c8edba898fe1c9d315c060ca1525a910613
   Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
 
-COCOAPODS: 0.24.0
+COCOAPODS: 0.26.2
