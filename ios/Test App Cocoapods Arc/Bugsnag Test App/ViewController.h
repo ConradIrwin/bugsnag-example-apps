@@ -13,9 +13,5 @@
 - (IBAction)generateSignal:(id)sender;
 - (IBAction)delayedException:(id)sender;
 - (IBAction)nonFatalException:(id)sender;
-- (IBAction)nonFatalWithMetadata:(id)sender;
-- (IBAction)nonFatalWithCustomData:(id)sender;
-- (IBAction)addUser:(id)sender;
-- (IBAction)addDevice:(id)sender;
 
 @end
