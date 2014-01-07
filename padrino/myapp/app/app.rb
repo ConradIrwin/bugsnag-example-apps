@@ -9,6 +9,7 @@ module Myapp
     register Padrino::Helpers
 
     use Bugsnag::Rack
+    enable :raise_errors
 
     enable :sessions
 
