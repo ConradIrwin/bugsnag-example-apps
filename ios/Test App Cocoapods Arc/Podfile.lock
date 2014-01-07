@@ -1,17 +1,10 @@
 PODS:
-  - Bugsnag (3.0.1):
-    - Reachability
-  - Reachability (3.1.1)
+  - Bugsnag (3.1.1)
 
 DEPENDENCIES:
-  - Bugsnag (from `~/Projects/bugsnag/bugsnag-cocoa/`)
-
-EXTERNAL SOURCES:
-  Bugsnag:
-    :path: ~/Projects/bugsnag/bugsnag-cocoa/
+  - Bugsnag
 
 SPEC CHECKSUMS:
-  Bugsnag: a2856c8edba898fe1c9d315c060ca1525a910613
-  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
+  Bugsnag: 877ad8c9d632397b0685994c93a3e8e76bedc482
 
-COCOAPODS: 0.26.2
+COCOAPODS: 0.27.1

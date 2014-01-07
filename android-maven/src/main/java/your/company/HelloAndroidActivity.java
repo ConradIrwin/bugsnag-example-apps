@@ -8,7 +8,8 @@ import android.view.View;
 import java.io.IOException;
 
 import com.bugsnag.android.Bugsnag;
-import com.bugsnag.android.BugsnagActivity;
+import com.bugsnag.android.activity.BugsnagActivity;
+import com.bugsnag.MetaData;
 
 public class HelloAndroidActivity extends BugsnagActivity {
 
@@ -22,22 +23,27 @@ public class HelloAndroidActivity extends BugsnagActivity {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                 .detectDiskReads()
+                 .detectDiskWrites()
+                 .detectAll()   // or .detectAll() for all detectable problems
+                 .penaltyDeath()
+                 .build());
+         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                 .detectLeakedSqlLiteObjects()
+                 .detectLeakedClosableObjects()
+                 .penaltyLog()
+                 .penaltyDeath()
+                 .build());
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-            .detectAll()
-            .penaltyLog()
-            .build());
-
-        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-            .detectAll()
-            .penaltyLog()
-            .build());
-
         findViewById(R.id.notify).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Bugsnag.notify(new RuntimeException("Stuff broke in android"));
+                MetaData meta = new MetaData();
+                meta.addToTab("User", "key2", "value2");
+                Bugsnag.notify(new RuntimeException("Stuff broke in android"), meta);
             }
         });
 
@@ -47,6 +53,9 @@ public class HelloAndroidActivity extends BugsnagActivity {
             }
         });
 
-        Bugsnag.register(this, "8f5c0ec341d974b5e6fbdf16cb5cca3f");
+        Bugsnag.register(this, "6796ac4207703a9c343bf7777587a4dd");
+        Bugsnag.setUser("id", "email", "name");
+        Bugsnag.addToTab("User", "key1", "value1");
+        Bugsnag.setEndpoint("192.168.1.130:8000");
     }
 }

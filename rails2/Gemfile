@@ -1,0 +1,7 @@
+source 'http://rubygems.org'
+
+# Required for rails
+gem "rails", "=2.3.16"
+gem "bugsnag", :path => "/Users/simon/Projects/bugsnag/bugsnag-ruby"
+gem "iconv"
+gem "sqlite3"

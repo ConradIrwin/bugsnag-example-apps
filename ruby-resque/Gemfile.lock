@@ -1,16 +1,13 @@
-PATH
-  remote: /Users/james/src/bugsnag/bugsnag-ruby
-  specs:
-    bugsnag (1.5.3)
-      httparty (>= 0.6, < 1.0)
-      multi_json (~> 1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
-    httparty (0.11.0)
+    bugsnag (1.8.0)
+      httparty (>= 0.6, < 1.0)
       multi_json (~> 1.0)
+    httparty (0.12.0)
+      json (~> 1.8)
       multi_xml (>= 0.5.2)
+    json (1.8.1)
     mono_logger (1.1.0)
     multi_json (1.8.1)
     multi_xml (0.5.5)
@@ -39,6 +36,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bugsnag!
+  bugsnag
   rake
   resque

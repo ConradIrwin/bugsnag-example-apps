@@ -29,11 +29,19 @@
 }
 
 - (IBAction)generateException:(id)sender {
-    [NSException raise:@"BugsnagException" format:@"Test exception. New message!"];
+    [self performSelectorOnMainThread:@selector(someRandomMethod) withObject:nil waitUntilDone:NO];
 }
 
 - (IBAction)generateSignal:(id)sender {
-    raise(SIGSEGV);
+    Byte *p[10000];
+    int allocatedMB = 0;
+    
+    while (true) {
+        p[allocatedMB] = malloc(1048576);
+        memset(p[allocatedMB], 0, 1048576);
+        allocatedMB += 1;
+        NSLog(@"%d", allocatedMB);
+    }
 }
 
 - (IBAction)delayedException:(id)sender {
