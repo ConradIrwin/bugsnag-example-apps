@@ -1,7 +1,7 @@
 var restify = require('restify');
 
 var bugsnag = require("bugsnag");
-bugsnag.register("6796ac4207703a9c343bf7777587a4dd", {
+bugsnag.register("13686661989c6c85aff27eddac945ec6", {
   notifyReleaseStages: ["production", "development"],
   notifyHost: "localhost",
   notifyPort: 8000,
@@ -15,9 +15,6 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-// server.use(bugsnag.requestHandler);
-// server.use(bugsnag.errorHandler);
-
 server.get('/', function get(req, res, next) {
 
   throw new Error("yddo");
@@ -30,12 +27,7 @@ server.listen(9123, function() {
   console.log("Listening!");
 })
 
-server.on("uncaughtException", function(req, res, route, err){
-  bugsnag.notify(err, {req: req});
-  if (res._headerSent) {
-    return (false);
-  }
-
-  res.send(new restify.InternalError(err, err.message || 'unexpected error'));
-  return (true);
+server.on("uncaughtException", function (req, res, route, e) {
+  if (!res._headerSent) res.send(new restify.InternalError(e, e.message || 'unexpected error'));
 });
+server.on("uncaughtException", bugsnag.restifyHandler);
