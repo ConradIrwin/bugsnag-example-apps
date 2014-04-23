@@ -102,7 +102,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 BUGSNAG = {
-    'api_key': 'dcc345d219ef5107c6ce8aca68a40af2',
+    'api_key': '066f5ad3590596f9aa8d601ea89af845',
     'project_root': "/Users/simon/Projects/bugsnag/bugsnag-example-apps/django",
     'auto_notify': True
 }
